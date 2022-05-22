@@ -1,0 +1,31 @@
+#results {
+  
+  #info {
+
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    justify-content: center;
+  
+    .name, h3 {
+      color: $white;
+      text-transform: uppercase;
+      text-shadow: 1px 1px 10px black;
+    }
+
+    .atributes {
+
+      .circle {
+
+        background-color: $grey-color;
+        border-radius: 100%;
+        width: 60px;
+        height: 60px;
+      }
+
+      h3 {
+        font-size: 20px;
+      }
+    }
+  }
+}

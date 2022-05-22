@@ -1,0 +1,71 @@
+// Custom.scss
+// Option A: Include all of Bootstrap
+
+// Include any default variable overrides here (though functions won't be available)
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// Then add additional custom code here
+
+// Required
+@import "../../node_modules/bootstrap/scss/functions";
+
+// Default variable overrides
+$body-bg: #252525;
+$body-color: #111;
+$blue-color: #17408B;
+$white: #FFFFFF;
+$red-default-color: #C9082A;
+$grey-color: #94a3b8;
+
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+// Required
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+
+@import 'players';
+@import 'results';
+
+body {
+  background-color: $blue-color;
+  background-image: url('https://wallpaperaccess.com/full/1305339.jpg');
+  background-position: center center;
+  background-size: contain;
+  background-blend-mode: luminosity;
+
+  @media all and (max-width: 768px) {
+    background-image: url('https://www.wallpapertip.com/wmimgs/73-735410_nba-where-amazing-happens-iphone-6-plus-wallpaper.jpg');
+  }
+}
+
+// Teste datalist
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #BBB #EEE;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #bbb;
+  border-radius: 20px;
+  border: 3px solid #bbb;
+}
+
+.list-players::-webkit-scrollbar-thumb {
+  background-color: #bbb;
+  border-radius: 20px;
+  border: 3px solid #FFF;
+}
