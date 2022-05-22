@@ -1,0 +1,70 @@
+.player-card {
+  border-radius: 10px;
+  box-shadow: 0 3px 3px -3px #333;
+
+  h1 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: bold;
+    color: $blue-color;
+  }
+  
+  .img-block {
+    overflow: hidden;
+    // width: 100%;
+
+    img.player {
+      width: 60%;
+      filter: blur(12px) hue-rotate(180deg);
+    }
+  }
+
+  input {
+    width: 80%;
+    border: 1px solid rgb(226 232 240/1);
+    border-radius: .25rem;
+  }
+
+  .list-players {
+    width: 97%;
+  }
+
+  // Functional Search Select input datalist
+
+  input {
+    padding: 10px;
+    font-size: 1em;
+    width: calc(100% - 20px);    
+    border: 1px solid rgb(226 232 240/1);
+  }
+  input[list]:focus {
+    outline: none;
+  }
+  input[list] + div[list] {
+    display: none;
+    position: relative;
+    margin: auto;
+    max-height: 164px;
+    overflow-y: auto;
+    background: #FFF;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 3px 3px -3px #333;
+    z-index: 100;
+    border: 1px solid rgb(226 232 240/1);
+  }
+  input[list] + div[list] span {
+    display: block;
+    padding: 7px 5px 7px 20px;
+    color: $blue-color;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  input[list] + div[list] span:not(:last-child) {
+    border-bottom: 1px solid #EEE;
+  }
+  input[list] + div[list] span:hover {
+    background: rgba(100, 120, 140, .2);
+  }
+}
