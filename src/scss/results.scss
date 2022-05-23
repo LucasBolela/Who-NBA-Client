@@ -1,10 +1,11 @@
 #results {
+  flex-flow: wrap-reverse;
   
-  #info {
+  .info {
 
     display: flex;
     flex-direction: row;
-    gap: 15px;
+    gap: 10px;
     justify-content: center;
   
     .name, h3 {
@@ -21,6 +22,19 @@
         border-radius: 100%;
         width: 60px;
         height: 60px;
+
+        h1 {
+          font-weight: bold;
+          margin: auto;
+          display: flex;
+          align-content: center;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+          width: 100%;
+          color: white;
+          font-size: 30px;
+        }
       }
 
       h3 {

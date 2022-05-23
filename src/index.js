@@ -1,65 +1,21 @@
 // Import all plugins
 import * as bootstrap from 'bootstrap';
 
-// import bootstrap from 'bootstrap'
+import Attempt from './js/attempt';
 
+// Coin Flip
 
-$(document).on('dblclick', 'input[list]', function(event){
-  event.preventDefault();
-      var str = $(this).val();
-  $('div[list='+$(this).attr('list')+'] span').each(function(k, obj){
-          if($(this).html().toLowerCase().indexOf(str.toLowerCase()) < 0){
-              $(this).hide();
-          }
-      })
-  $('div[list='+$(this).attr('list')+']').toggle(100);
-  $(this).focus();
-})
+jQuery(document).ready(function($){
 
-$(document).on('blur', 'input[list]', function(event){
-      event.preventDefault();
-      var list = $(this).attr('list');
-      setTimeout(function(){
-          $('div[list='+list+']').hide(100);
-      }, 100);
-  })
-
-  $(document).on('click', 'div[list] span', function(event){
-      event.preventDefault();
-      var list = $(this).parent().attr('list');
-      var item = $(this).html();
-      $('input[list='+list+']').val(item);
-      $('div[list='+list+']').hide(100);
-  })
-
-$(document).on('keyup', 'input[list]', function(event){
-      event.preventDefault();
-      var list = $(this).attr('list');
-  var divList =  $('div[list='+$(this).attr('list')+']');
-  if(event.which == 27){ // esc
-      $(divList).hide(200);
-      $(this).focus();
-  }
-  else if(event.which == 13){ // enter
-      if($('div[list='+list+'] span:visible').length == 1){
-          var str = $('div[list='+list+'] span:visible').html();
-          $('input[list='+list+']').val(str);
-          $('div[list='+list+']').hide(100);
-      }
-  }
-  else if(event.which == 9){ // tab
-      $('div[list]').hide();
-  }
-  else {
-      $('div[list='+list+']').show(100);
-      var str  = $(this).val();
-      $('div[list='+$(this).attr('list')+'] span').each(function(){
-        if($(this).html().toLowerCase().indexOf(str.toLowerCase()) < 0){
-          $(this).hide(200);
-        }
-        else {
-          $(this).show(200);
-        }
-      })
-    }
-  })
+  $('#results').on('DOMNodeInserted', function(){
+    document.querySelectorAll('.coin').forEach((attr)=> {
+      if (attr.classList.contains('right'))
+        attr.classList.add('bg-green', 'heads');
+      else
+        attr.classList.add('drops');
+    })
+    setTimeout(()=>
+      $('.coin').removeClass('coin')
+    , 3000)
+  });
+});
