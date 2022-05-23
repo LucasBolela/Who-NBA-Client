@@ -81,6 +81,7 @@ $(document).on('click', 'div[list] span', function(event){
   insert(item)
   $('input[list='+list+']').val(item);
   $('div[list='+list+']').hide(100);
+  $('input')[0].value = '';
 })
 
 $(document).on('keyup', 'input[list]', function(event){
@@ -98,6 +99,7 @@ $(document).on('keyup', 'input[list]', function(event){
 
       $('input[list='+list+']').val(str);
       $('div[list='+list+']').hide(100);
+      $('input')[0].value = '';
     }
   }
   else if(event.which == 9){ // tab
